@@ -55,11 +55,15 @@ export function HeroSection() {
           </motion.div>
 
           <motion.h1 
-            className="font-serif font-light leading-[0.9] tracking-tight mb-8"
+            className="font-serif font-light leading-[0.95] tracking-tight mb-8"
             style={{ fontSize: 'clamp(4rem, 10vw, 12rem)' }}
           >
-            <motion.div variants={itemVariants} className="overflow-hidden">Mariya</motion.div>
-            <motion.div variants={itemVariants} className="overflow-hidden">Sibiya</motion.div>
+            <motion.div variants={itemVariants} className="overflow-hidden pb-[0.18em]">
+              <span className="block translate-y-0">Mariya</span>
+            </motion.div>
+            <motion.div variants={itemVariants} className="overflow-hidden pb-[0.18em]">
+              <span className="block translate-y-0">Sibiya</span>
+            </motion.div>
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-[#6E6E6E] text-base md:text-lg font-light leading-relaxed max-w-md mb-16">

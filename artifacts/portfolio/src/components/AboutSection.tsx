@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import aboutPortrait from '@assets/generated_images/about-portrait.jpg';
 
 export function AboutSection() {
   const words = [
@@ -64,17 +65,19 @@ export function AboutSection() {
             </span>
           </motion.div>
 
-          {/* Right Column: Placeholder Image */}
+          {/* Right Column: Portrait */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, delay: 0.5 }}
-            className="hidden lg:block w-full h-[600px] bg-[#E5E5E3] relative"
+            className="hidden lg:block w-full h-[600px] relative overflow-hidden"
           >
-            <div className="absolute inset-0 flex items-center justify-center opacity-30">
-              <span className="text-xs uppercase tracking-widest text-[#6E6E6E]">Editorial View</span>
-            </div>
+            <img
+              src={aboutPortrait}
+              alt="Mariya Sibiya in a professional setting"
+              className="w-full h-full object-cover object-top grayscale"
+            />
           </motion.div>
         </div>
       </div>
