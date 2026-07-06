@@ -70,12 +70,18 @@ export function HeroSection() {
             Biotechnology graduate with hands-on laboratory experience and certified in Medical Coding. Passionate about accurate healthcare documentation through supporting quality healthcare.
           </motion.p>
 
-          <motion.a 
+          <motion.a
             variants={itemVariants}
-            href="#about-me" 
-            className="text-xs tracking-widest text-[#6E6E6E] hover:text-[#111111] transition-colors uppercase inline-flex items-center gap-2"
+            href="#about-me"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById('about-me');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="group text-xs tracking-widest text-[#6E6E6E] hover:text-[#111111] transition-colors duration-300 uppercase inline-flex items-center gap-2"
           >
-            Discover More <span>↓</span>
+            Discover More{' '}
+            <span className="inline-block transition-transform duration-500 group-hover:translate-y-1">↓</span>
           </motion.a>
         </motion.div>
       </div>
