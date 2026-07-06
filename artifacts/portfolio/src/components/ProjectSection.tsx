@@ -39,15 +39,6 @@ export function ProjectSection() {
           Conducted transcriptomic analysis of colon cancer gene expression data to identify potential diagnostic biomarkers using bioinformatics tools and statistical methods.
         </motion.p>
 
-        <motion.span 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="text-xs uppercase tracking-widest text-[#6E6E6E] inline-flex items-center gap-2 border-b border-[#E5E5E3] pb-1"
-        >
-          View Project <span>→</span>
-        </motion.span>
       </div>
     </section>
   );

@@ -72,17 +72,6 @@ export function ExperienceSection() {
           ))}
         </div>
 
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="mt-16 text-right"
-        >
-          <span className="text-[10px] uppercase tracking-widest text-[#6E6E6E] inline-flex items-center gap-2">
-            View All Experience <span>→</span>
-          </span>
-        </motion.div>
       </div>
     </section>
   );
