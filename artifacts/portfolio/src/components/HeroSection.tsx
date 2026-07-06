@@ -2,24 +2,28 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import portraitImg from '@assets/16bc8683-5021-49dc-8f0e-ab752eba0492_1783179615072.png';
 
-export function HeroSection() {
+interface HeroSectionProps {
+  isReady: boolean;
+}
+
+export function HeroSection({ isReady }: HeroSectionProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+      transition: { duration: 1.1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
     },
   };
 
@@ -27,7 +31,7 @@ export function HeroSection() {
     <section id="about" className="min-h-[100dvh] w-full flex flex-col md:flex-row relative">
       {/* Left Content */}
       <div className="w-full md:w-1/2 pt-32 pb-12 px-6 md:px-12 flex flex-col relative z-10 justify-center">
-        
+
         {/* Tiny vertical line + 01 on far left (desktop only) */}
         <div className="hidden xl:flex absolute left-6 top-1/2 -translate-y-1/2 flex-col items-center opacity-30">
           <span className="text-xs font-mono mb-4 text-[#6E6E6E]">01</span>
@@ -43,10 +47,11 @@ export function HeroSection() {
           ))}
         </div>
 
-        <motion.div 
+        {/* Gate animation behind isReady */}
+        <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={isReady ? 'visible' : 'hidden'}
           className="max-w-xl xl:ml-32"
         >
           <motion.div variants={itemVariants} className="flex items-center gap-4 mb-6">
@@ -54,15 +59,15 @@ export function HeroSection() {
             <span className="text-[10px] uppercase tracking-widest text-[#6E6E6E]">Aspiring Medical Coder</span>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             className="font-serif font-light leading-[0.95] tracking-tight mb-8"
             style={{ fontSize: 'clamp(4rem, 10vw, 12rem)' }}
           >
             <motion.div variants={itemVariants} className="overflow-hidden pb-[0.18em]">
-              <span className="block translate-y-0">Mariya</span>
+              <span className="block">Mariya</span>
             </motion.div>
             <motion.div variants={itemVariants} className="overflow-hidden pb-[0.18em]">
-              <span className="block translate-y-0">Sibiya</span>
+              <span className="block">Sibiya</span>
             </motion.div>
           </motion.h1>
 
@@ -86,17 +91,17 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Right Image */}
+      {/* Right Image — also gated */}
       <div className="w-full md:w-1/2 h-[60vh] md:h-screen relative overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          animate={isReady ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 1.05 }}
+          transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className="w-full h-full"
         >
-          <img 
-            src={portraitImg} 
-            alt="Mariya Sibiya portrait" 
+          <img
+            src={portraitImg}
+            alt="Mariya Sibiya portrait"
             className="w-full h-full object-cover object-center"
           />
         </motion.div>

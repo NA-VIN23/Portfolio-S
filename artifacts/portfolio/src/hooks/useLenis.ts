@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Lenis from '@studio-freight/lenis';
+import { registerLenis } from '../lib/lenis';
 
 export function useLenis() {
   useEffect(() => {
@@ -8,13 +9,14 @@ export function useLenis() {
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
-    let rafId: number;
+    // Register globally so Preloader can stop/start it
+    registerLenis(lenis);
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
       rafId = requestAnimationFrame(raf);
     }
-
     rafId = requestAnimationFrame(raf);
 
     return () => {
