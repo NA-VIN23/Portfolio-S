@@ -1,0 +1,92 @@
+I want you to create a beautiful custom page pre-loader that appears:
+
+When a user first enters the website.
+Whenever the page is refreshed/reloaded.
+
+The pre-loader should completely cover the viewport until the website is fully loaded.
+
+Layout
+
+Center everything both horizontally and vertically.
+
+There should be:
+
+A large text logo/title in the center.
+Directly underneath it, a row of pixel-style hearts that act as the loading indicator.
+Large Text
+Use the same font family already used throughout my website.
+Do NOT introduce a new font.
+Make the text much larger than normal (hero-size).
+Use the same dark/black color used elsewhere on the site.
+Give the letters clean spacing and premium typography.
+Keep it simple and elegant.
+
+Example layout:
+
+BIG TEXT
+
+♡ ♡ ♡ ♡ ♡ ♡
+Hearts
+
+Use 6 pixel-style hearts (or another visually balanced number if it looks better).
+
+The hearts should match the style of the attached reference image.
+
+Normal state:
+
+Hearts are outlined only.
+No fill.
+Exactly like the provided pixel heart reference.
+
+Loading animation:
+
+Hearts fill one by one from left to right.
+Each heart should smoothly transition from outline to filled.
+After a heart fills, it remains filled while the next one starts.
+Continue until all hearts are filled.
+
+Animation example:
+
+♡ ♡ ♡ ♡ ♡ ♡
+
+♥ ♡ ♡ ♡ ♡ ♡
+
+♥ ♥ ♡ ♡ ♡ ♡
+
+♥ ♥ ♥ ♡ ♡ ♡
+
+♥ ♥ ♥ ♥ ♡ ♡
+
+♥ ♥ ♥ ♥ ♥ ♡
+
+♥ ♥ ♥ ♥ ♥ ♥
+
+The filling should feel smooth, cute, and satisfying.
+
+Timing
+Total loading animation should last around 1.5–2.5 seconds.
+If the page loads faster, keep the loader visible until the animation completes naturally.
+Once all hearts are filled and the page is ready:
+Fade out the loader smoothly.
+Then reveal the website.
+Do not abruptly remove the loader.
+Styling
+Minimal.
+Clean.
+Premium.
+No background patterns.
+Use the same background color as my website (or solid white if that's the site's background).
+The hearts should be black/dark, matching the site's design.
+Everything should feel cohesive with the existing UI.
+Technical Requirements
+The loader should appear only during the initial page load or browser refresh.
+Prevent scrolling and interaction while the loader is visible.
+Use CSS animations where possible for smooth performance.
+Make it fully responsive on desktop, tablet, and mobile.
+Keep the implementation modular and clean.
+Do not modify the rest of the website's layout or functionality.
+Pixel Heart
+
+Use the attached image as the reference for the pixel heart shape. Recreate that heart using HTML/CSS (or SVG if needed) so it remains crisp at any size. Do not use emoji hearts.
+
+The final result should feel like a polished game-inspired loading screen, with the large centered text and six pixel hearts gradually filling one-by-one before the website smoothly appears.
