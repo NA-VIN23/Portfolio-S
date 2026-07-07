@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import aboutPortrait from '@assets/generated_images/about-portrait.jpg';
+import aboutPortrait from '@assets/ef1ac456-ffec-415a-b02f-e62fb94ff45f_1783434041042.png';
 
 export function AboutSection() {
   const words = [

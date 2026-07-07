@@ -17,6 +17,15 @@ function App() {
   // Slight delay so hero animates as the preloader fade-out completes
   const [heroReady, setHeroReady] = useState(false);
 
+  // Always start at the very top on load/refresh — prevents browser scroll restoration
+  // from jumping mid-page, which would skip the preloader experience.
+  useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   useLenis();
 
   useEffect(() => {
