@@ -65,7 +65,6 @@ catalogs:
       version: 3.25.76
 
 importers:
-
   .:
     devDependencies:
       prettier:
